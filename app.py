@@ -72,7 +72,6 @@ def get_transcript_with_retries(video_id, max_retries=3):
             except Exception as e:
                 print(f"Transcript translation failed: {str(e)}")
 
-            
             try:
                 yt = YouTube(f"https://www.youtube.com/watch?v={video_id}")
                 caption = yt.captions.get_by_language_code('en')
