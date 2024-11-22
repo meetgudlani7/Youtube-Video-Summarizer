@@ -8,11 +8,11 @@ from dotenv import load_dotenv
 from urllib.parse import urlparse, parse_qs
 import time
 
-load_dotenv()
+
 
 app = Flask(__name__, static_folder='static')
 
-GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+GOOGLE_API_KEY = os.environ('GOOGLE_API_KEY')
 genai.configure(api_key=GOOGLE_API_KEY)
 model = genai.GenerativeModel('gemini-pro')
 
